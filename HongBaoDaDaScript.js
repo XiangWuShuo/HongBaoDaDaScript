@@ -11,6 +11,11 @@
 (function() {
     'use strict';
 
+    // 设置文字
+    var baoTitle = '享物说送福利！'
+    // 总赏金
+    var baoPrice = '1';
+
     function setText(input, value) {
         input.value = value;
         var myEvent = new Event('input');
@@ -25,7 +30,7 @@
         if (true == document.getElementsByClassName('dn')[3].innerHTML.startsWith("bao_")) {
             setTimeout(restart, 500);
         } else {
-            setTimeout(step3, 500);
+            setTimeout(step3, 1000);
         }
     }
 
@@ -36,8 +41,8 @@
 
     function step1() {
         var inputs = document.getElementsByTagName('input');
-        setText(inputs[4], '1');
-        setText(inputs[5], '1');
+        setText(inputs[4], baoTitle);
+        setText(inputs[5], baoPrice);
         setText(inputs[6], '1');
         document.getElementsByClassName('btn blue_btn')[0].click();
         setTimeout(step2, 500);
